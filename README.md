@@ -2,9 +2,16 @@ slam docker ubuntu16.04 environment
 =========================
 Docker image to provide VNC interface to access Ubuntu 16.04 LXDE desktop SLAM development environment.
 
+Build the docker image with Dockerfile
+-------------------------
+Download the Dockerfile and run the docker image build command at same directory:
+
+```
+docker build -t shihezichen/slam_ubuntu16.04_desktop_env  ./
+```
+
 Quick Start
 -------------------------
-
 Run the docker image with VNC port, password, docker user and password , resolution:
 
 ```
