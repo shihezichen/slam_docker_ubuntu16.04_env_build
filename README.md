@@ -15,7 +15,10 @@ Quick Start
 Run the docker image with VNC port, password, docker user and password , resolution:
 
 ```
-docker run -it --rm -p 5900:5900 -e VNC_PASSWORD=hadoop -e RESOLUTION=1920x1080 -e USER=hadoop -e PASSWORD=hadoop  shiezichen/slam_ubuntu16.04_desktop_env
+docker run -it --rm -p 5900:5900  \
+      -e VNC_PASSWORD=hadoop -e RESOLUTION=1920x1080  \
+      -e USER=hadoop -e PASSWORD=hadoop  \
+      shiezichen/slam_ubuntu16.04_desktop_env
 ```
 
 
