@@ -32,7 +32,7 @@ docker run -it --rm -p 5900:5900  \
 ```
 
 
-License
+Q&A
 ==================
 
-See the LICENSE file for details.
+Please contact me (shiehzichen@live.cn) if you have any question and suggestion.
