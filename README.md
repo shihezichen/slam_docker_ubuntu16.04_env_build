@@ -8,7 +8,7 @@ Install the docker
 Download and install the docer 17.12 ce if you haven't installed it:
 
 ```
-download_inst_docker.sh 
+install_docker.sh
 ```
 
 Build the docker image with Dockerfile
