@@ -26,8 +26,6 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-
-
 RUN \
 	cd /root && \
 	wget --no-check-certificate -O Sophus-master.zip https://codeload.github.com/strasdat/Sophus/zip/master && \
