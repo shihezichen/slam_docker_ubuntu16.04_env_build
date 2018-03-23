@@ -3,6 +3,14 @@ slam docker ubuntu16.04 environment
 Docker image to provide VNC interface to access Ubuntu 16.04 LXDE desktop SLAM development environment which has already 
 install the Sophus, G2o, Pangolin, Ceres, PCL, Opencv libraries.
 
+Install the docker 
+-------------------------
+Download and install the docer 17.12 ce if you haven't installed it:
+
+```
+download_inst_docker.sh 
+```
+
 Build the docker image with Dockerfile
 -------------------------
 Download the Dockerfile and run the docker image build command at same directory:
