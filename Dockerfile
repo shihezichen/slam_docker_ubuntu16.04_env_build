@@ -32,35 +32,35 @@ RUN \
 	unzip Sophus-master.zip && \
 	rm -rf /root/Sophus-master.zip && \ 
 	mkdir -p /root/Sophus-master/build && cd /root/Sophus-master/build && \	
-	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget --no-check-certificate -O Pangolin-master.zip https://codeload.github.com/zzx2GH/Pangolin/zip/master && \
 	unzip Pangolin-master.zip && \
 	rm -rf /root/Pangolin-master.zip && \ 
 	mkdir -p /root/Pangolin-master/build && cd /root/Pangolin-master/build && \
-	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \	
 	cd /root && \
 	wget --no-check-certificate  -O ceres-solver-master.zip https://codeload.github.com/ceres-solver/ceres-solver/zip/master && \
 	unzip ceres-solver-master.zip && \
 	rm -rf /root/ceres-solver-master.zip && \ 
 	mkdir -p /root/ceres-solver-master/build && cd /root/ceres-solver-master/build && \
-	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget --no-check-certificate  -O g2o-master.zip https://codeload.github.com/RainerKuemmerle/g2o/zip/master && \
 	unzip g2o-master.zip && \
 	rm -rf /root/g2o-master.zip && \ 	
 	mkdir -p /root/g2o-master/build && cd /root/g2o-master/build && \
-	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget --no-check-certificate -O pcl-master.zip https://codeload.github.com/PointCloudLibrary/pcl/zip/master && \																																																																																																																																																																																																																																																																																																																																																																																																										
 	unzip pcl-master.zip && \
 	rm -rf /root/pcl-master.zip && \ 
 	mkdir -p /root/pcl-master/build && cd /root/pcl-master/build && \
-	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget --no-check-certificate -O opencv-3.2.0.zip  https://github.com/opencv/opencv/archive/3.2.0.zip  && \
