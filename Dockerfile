@@ -1,6 +1,7 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc
 LABEL maintainer="shihezichen@live.cn"
 
+
 RUN sed -i 's/tw\.archive\.ubuntu\.com/cn\.archive\.ubuntu.com/g' /etc/apt/sources.list
 
 RUN apt-get update \
@@ -24,6 +25,8 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+
+
 
 RUN \
 	cd /root && \
@@ -55,13 +58,29 @@ RUN \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
-	wget --no-check-certificate -O pcl-master.zip https://codeload.github.com/PointCloudLibrary/pcl/zip/master && \*
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    9
-																																																																																																																																																																																																																																																																																																																																																																																																																																							
+	wget --no-check-certificate -O pcl-master.zip https://codeload.github.com/PointCloudLibrary/pcl/zip/master && \																																																																																																																																																																																																																																																																																																																																																																																																										
 	unzip pcl-master.zip && \
 	rm -rf /root/pcl-master.zip && \ 
 	mkdir -p /root/pcl-master/build && cd /root/pcl-master/build && \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_DOCS=NO .. && \
+	make -j"$(nproc)" && make install && \
+	cd /root && \
+	wget --no-check-certificate -O opencv-3.2.0.zip  https://github.com/opencv/opencv/archive/3.2.0.zip  && \
+	unzip opencv-3.2.0.zip && \
+	wget --no-check-certificate -O opencv_contrib-3.2.0.zip  https://github.com/opencv/opencv_contrib/archive/3.2.0.zip  && \
+	unzip opencv_contrib-3.2.0.zip  && \
+	wget --no-check-certificate -O ippicv_linux_20151201.tgz https://raw.githubusercontent.com/Itseez/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz  &&  \
+	mkdir -p /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e   && \
+	cp ippicv_linux_20151201.tgz /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e	&& \
+	mkdir -p /root/opencv-3.2.0/build && cd /root/opencv-3.2.0/build && \
+	cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
+		-D INSTALL_PYTHON_EXAMPLES=ON  -D INSTALL_C_EXAMPLES=ON \
+		-D WITH_TBB=ON  -D WITH_V4L=ON -D WITH_QT=ON  -D WITH_GTK=ON  -D WITH_OPENGL=ON \
+		-D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF \
+		-D WITH_IPP=ON -D WITH_FFMPEG=ON -D FORCE_VTK=ON \
+		-D BUILD_DOCS=OFF -DPYTHON_EXECUTABLE=$(which python) \
+		-D OPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib-3.2.0/modules ..	&& \
 	make -j"$(nproc)" && make install 
+
 
 WORKDIR /root
