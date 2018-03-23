@@ -5,11 +5,12 @@ install the Sophus, G2o, Pangolin, Ceres, PCL, Opencv libraries.
 
 Install the docker 
 -------------------------
-Download and install the docer 17.12 ce if you haven't installed it:
+Input following command to download and install the docer 17.12 ce if you haven't installed it:
 
 ```
 install_docker.sh
 ```
+Skip this step if the docker is already ready.
 
 Build the docker image with Dockerfile
 -------------------------
