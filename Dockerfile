@@ -69,9 +69,11 @@ RUN \
 	unzip opencv-3.2.0.zip && \
 	wget  --no-check-certificate -O opencv_contrib-3.2.0.zip  https://github.com/opencv/opencv_contrib/archive/3.2.0.zip  && \
 	unzip opencv_contrib-3.2.0.zip  && \
-	wget  --no-check-certificate -O ippicv_linux_20151201.tgz https://raw.githubusercontent.com/Itseez/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz  &&  \
+	wget  --no-check-certificate -O ippicv_linux_20151201.tgz https://github.com/opencv/opencv_3rdparty/blob/ippicv/master_20151201/ippicv/ippicv_linux_20151201.tgz  &&  \
 	mkdir -p /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e   && \
-	cp ippicv_linux_20151201.tgz /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e	&& \
+	cp -p ippicv_linux_20151201.tgz /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e	&& \
+	wget --no-check-certificate -O protobuf-cpp-3.1.0.tar.gz https://github.com/google/protobuf/releases/download/v3.1.0/protobuf-cpp-3.1.0.tar.gz  && \
+	cp -p /root/protobuf-cpp-3.1.0.tar.gz  /root/opencv_contrib-3.2.0/modules/dnn/.download/bd5e3eed635a8d32e2b99658633815ef/v3.1.0/  && \
 	mkdir -p /root/opencv-3.2.0/build && cd /root/opencv-3.2.0/build && \
 	cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
 		-D INSTALL_PYTHON_EXAMPLES=ON  -D INSTALL_C_EXAMPLES=ON \
