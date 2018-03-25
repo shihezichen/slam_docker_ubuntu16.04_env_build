@@ -31,6 +31,12 @@ sudo docker run -it --rm -p 5900:5900  \
       shihezichen/slam_ubuntu16.04_desktop_env
 ```
 
+How to access the docker desktop with VNC
+-------------------------
+If you are using windows OS, you can download the VNC client and then access the ubuntu's ip:5900 through vnc with it.
+There are many VNC client softwares, like VNC Viewer(https://www.realvnc.com), MobaXterm (https://mobaxterm.mobatek.net), etc.
+
+
 
 Q&A
 ==================
