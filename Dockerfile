@@ -30,35 +30,30 @@ RUN \
 	cd /root && \
 	wget  --no-check-certificate -O Sophus-master.zip https://codeload.github.com/strasdat/Sophus/zip/master && \
 	unzip Sophus-master.zip && \
-	rm -rf /root/Sophus-master.zip && \ 
 	mkdir -p /root/Sophus-master/build && cd /root/Sophus-master/build && \	
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget  --no-check-certificate -O Pangolin-master.zip https://codeload.github.com/zzx2GH/Pangolin/zip/master && \
 	unzip Pangolin-master.zip && \
-	rm -rf /root/Pangolin-master.zip && \ 
 	mkdir -p /root/Pangolin-master/build && cd /root/Pangolin-master/build && \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \	
 	cd /root && \
 	wget  --no-check-certificate  -O ceres-solver-master.zip https://codeload.github.com/ceres-solver/ceres-solver/zip/master && \
 	unzip ceres-solver-master.zip && \
-	rm -rf /root/ceres-solver-master.zip && \ 
 	mkdir -p /root/ceres-solver-master/build && cd /root/ceres-solver-master/build && \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget  --no-check-certificate  -O g2o-master.zip https://codeload.github.com/RainerKuemmerle/g2o/zip/master && \
 	unzip g2o-master.zip && \
-	rm -rf /root/g2o-master.zip && \ 	
 	mkdir -p /root/g2o-master/build && cd /root/g2o-master/build && \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local  .. && \
 	make -j"$(nproc)" && make install && \
 	cd /root && \
 	wget --no-check-certificate -O pcl-master.zip https://codeload.github.com/PointCloudLibrary/pcl/zip/master && \																																																																																																																																																																																																																																																																																																																																																																																																										
 	unzip pcl-master.zip && \
-	rm -rf /root/pcl-master.zip && \ 
 	mkdir -p /root/pcl-master/build && cd /root/pcl-master/build && \
 	cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
 	make -j"$(nproc)" && make install
@@ -73,6 +68,7 @@ RUN \
 	mkdir -p /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e   && \
 	cp -p ippicv_linux_20151201.tgz /root/opencv-3.2.0/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e	&& \
 	wget --no-check-certificate -O protobuf-cpp-3.1.0.tar.gz https://github.com/google/protobuf/releases/download/v3.1.0/protobuf-cpp-3.1.0.tar.gz  && \
+	mkdir -p /root/opencv_contrib-3.2.0/modules/dnn/.download/bd5e3eed635a8d32e2b99658633815ef/v3.1.0/ && \
 	cp -p /root/protobuf-cpp-3.1.0.tar.gz  /root/opencv_contrib-3.2.0/modules/dnn/.download/bd5e3eed635a8d32e2b99658633815ef/v3.1.0/  && \
 	mkdir -p /root/opencv-3.2.0/build && cd /root/opencv-3.2.0/build && \
 	cmake  -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
