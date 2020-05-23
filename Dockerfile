@@ -2,7 +2,8 @@ FROM dorowu/ubuntu-desktop-lxde-vnc
 LABEL maintainer="shihezichen@live.cn"
 
 
-RUN sed -i 's/tw\.archive\.ubuntu\.com/cn\.archive\.ubuntu.com/g' /etc/apt/sources.list
+# RUN sed -i 's/tw\.archive\.ubuntu\.com/cn\.archive\.ubuntu.com/g' /etc/apt/sources.list
+ADD sources.list /etc/apt/
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
